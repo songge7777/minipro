@@ -1,0 +1,20 @@
+/* components/HeaderNav/headerNav.wxss */
+
+
+.recommendList_name{
+  color: #aaa;
+  margin-bottom: 10rpx;
+}
+.recommendList_text{
+  height: 64rpx;
+  line-height: 64rpx;
+}
+.recommendList_more{
+  float: right;
+  border: 1rpx solid #aaa;
+  width: 160rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  border-radius: 20rpx;
+}

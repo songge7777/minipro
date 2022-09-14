@@ -33,23 +33,6 @@
   padding: 0 20rpx;
   margin-top: 20rpx;
 }
-.recommendList_name{
-  color: #aaa;
-  margin-bottom: 10rpx;
-}
-.recommendList_text{
-  height: 64rpx;
-  line-height: 64rpx;
-}
-.recommendList_more{
-  float: right;
-  border: 1rpx solid #aaa;
-  width: 160rpx;
-  height: 64rpx;
-  line-height: 64rpx;
-  text-align: center;
-  border-radius: 20rpx;
-}
 /* 滑动布局 */
 .scroll-layout{
   display: flex;
@@ -71,4 +54,33 @@
 	-webkit-line-clamp: 1;   /** 多行文本溢出...*/
   overflow: hidden; 
   font-size: 28rpx;
+}
+
+/* 排行榜 */
+.rankList{
+  padding: 0 20rpx;
+}
+
+.rankList_swiper{
+  height: 400rpx;
+}
+.rankList_swiper_layout{
+  width: 90%;
+  background: #eee;
+  height: 400rpx;
+}
+.rankList_swiper_layout{
+  padding: 0 20rpx;
+}
+.rankList_swiper_layout_list{
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.rankList_swiper_layout_list_img{
+  width: 100rpx;
+  height: 100rpx;
+}
+.rankList_swiper_layout_index{
+  margin: 0 40rpx;
 }

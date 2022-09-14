@@ -1,0 +1,5 @@
+<view class="recommendList_header">
+  <view class="recommendList_name">{{name}}</view>
+  <text class="recommendList_text">{{text}}</text>
+  <text class="recommendList_more">查看更多</text>
+</view>

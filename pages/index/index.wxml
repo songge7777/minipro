@@ -36,11 +36,8 @@
 
 <!-- recommendList -->
  <view class="recommendList">
-    <view class="recommendList_header">
-      <view class="recommendList_name">推荐歌曲</view>
-      <text class="recommendList_text">为你精心推荐</text>
-      <text class="recommendList_more">查看更多</text>
-    </view>
+    <!-- 头部nav -->
+    <HeaderNav name="推荐歌曲" text="为你精心推荐" />
     <!-- 滑动 -->
     <view>
       <scroll-view  scroll-x enable-flex class="scroll-layout">
@@ -66,5 +63,84 @@
         </view>
       </scroll-view>
     </view>
+  </view>
+  <!-- 排行榜 -->
+  <view class="rankList">
+    <!-- 头部 -->
+    <HeaderNav name="排行榜" text="热歌风向标" />
+    <!-- 轮播 -->
+    <swiper class="rankList_swiper"
+      previous-margin='20rpx'
+      next-margin="40rpx"
+    >
+      <swiper-item class="rankList_swiper_item">
+        <view class="rankList_swiper_layout">
+          <text class="rankList_swiper_layout_name">名字</text>
+          <!-- 排行榜的 某一条歌曲 -->
+          <view class="rankList_swiper_layout_list">
+            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
+            <text class="rankList_swiper_layout_index">1</text>
+            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
+          </view>
+          <view class="rankList_swiper_layout_list">
+            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
+            <text class="rankList_swiper_layout_index">1</text>
+            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
+          </view>
+          <view class="rankList_swiper_layout_list">
+            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
+            <text class="rankList_swiper_layout_index">1</text>
+            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
+          </view>
+        </view>
+      </swiper-item>
+
+      <swiper-item class="rankList_swiper_item">
+        <view class="rankList_swiper_layout">
+          <text class="rankList_swiper_layout_name">名字</text>
+          <!-- 排行榜的 某一条歌曲 -->
+          <view class="rankList_swiper_layout_list">
+            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
+            <text class="rankList_swiper_layout_index">1</text>
+            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
+          </view>
+          <view class="rankList_swiper_layout_list">
+            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
+            <text class="rankList_swiper_layout_index">1</text>
+            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
+          </view>
+          <view class="rankList_swiper_layout_list">
+            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
+            <text class="rankList_swiper_layout_index">1</text>
+            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
+          </view>
+        </view>
+      </swiper-item>
+
+      <swiper-item class="rankList_swiper_item">
+        <view class="rankList_swiper_layout">
+          <text class="rankList_swiper_layout_name">名字</text>
+          <!-- 排行榜的 某一条歌曲 -->
+          <view class="rankList_swiper_layout_list">
+            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
+            <text class="rankList_swiper_layout_index">1</text>
+            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
+          </view>
+          <view class="rankList_swiper_layout_list">
+            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
+            <text class="rankList_swiper_layout_index">1</text>
+            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
+          </view>
+          <view class="rankList_swiper_layout_list">
+            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
+            <text class="rankList_swiper_layout_index">1</text>
+            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view>
+    底部
   </view>
 </view>
