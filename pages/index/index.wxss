@@ -1,5 +1,10 @@
 
-
+/* 轮播图 */
+.swiper-item-img{
+  width: 100%;
+  height: 300rpx;
+}
+/* nav */
 .navList{
   display: flex;
   justify-content: space-around;
@@ -23,4 +28,47 @@
   font-size: 28rpx;
   margin-top: 20rpx;
   text-align: center;
+}
+.recommendList{
+  padding: 0 20rpx;
+  margin-top: 20rpx;
+}
+.recommendList_name{
+  color: #aaa;
+  margin-bottom: 10rpx;
+}
+.recommendList_text{
+  height: 64rpx;
+  line-height: 64rpx;
+}
+.recommendList_more{
+  float: right;
+  border: 1rpx solid #aaa;
+  width: 160rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  border-radius: 20rpx;
+}
+/* 滑动布局 */
+.scroll-layout{
+  display: flex;
+  height: 300rpx;
+}
+.scroll-layout-item{
+  display: flex;
+  flex-direction: column;
+  margin-right: 20rpx;
+}
+.scroll-layout-item-img{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 20rpx;
+}
+.scroll-layout-item-name{
+  display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;   /** 多行文本溢出...*/
+  overflow: hidden; 
+  font-size: 28rpx;
 }
