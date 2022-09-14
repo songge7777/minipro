@@ -1,0 +1,35 @@
+<view>
+ <!-- 轮播 -->
+ <swiper 
+  indicator-dots
+  indicator-active-color='red'
+ >
+    <!-- wx:for-index 起别名 -->
+    <!-- wx:for-item 起别名 -->
+    <swiper-item wx:for="{{bannerLists}}" wx:key="{{item.id}}">
+      <image src="{{item.url}}"></image>
+    </swiper-item>
+ </swiper>
+ <view class="navList">
+    <view class="navList_item">
+      <text class="iconfont icon-meirituijian"></text>
+      <text class="navList_item_name">每日推荐</text>
+    </view>
+    <view  class="navList_item">
+      <text class="iconfont icon-gedan"></text>
+      <text class="navList_item_name">歌单</text>
+    </view>
+    <view  class="navList_item">
+      <text class="iconfont icon-paihangbang"></text>
+      <text class="navList_item_name">排行榜</text>
+    </view>
+    <view  class="navList_item">
+      <text class="iconfont icon-diantai"></text>
+      <text class="navList_item_name">电台</text>
+    </view>
+    <view  class="navList_item">
+      <text class="iconfont icon-zhiboguankanliangbofangsheyingshexiangjixianxing"></text>
+      <text class="navList_item_name">直播</text>
+    </view>
+ </view>
+</view>

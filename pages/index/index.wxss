@@ -1,0 +1,26 @@
+
+
+.navList{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20rpx;
+}
+.navList_item{
+  display: flex;
+  flex-direction: column;
+}
+.iconfont{
+  width: 100rpx;
+  height: 100rpx;
+  background: red;
+  border-radius: 50%;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 50rpx;
+  color: white;
+}
+.navList_item_name{
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  text-align: center;
+}

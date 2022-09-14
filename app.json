@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ea2a1d",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "谷粒云音乐"
+  }
+}
