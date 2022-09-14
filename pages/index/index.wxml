@@ -6,8 +6,8 @@
  >
     <!-- wx:for-index 起别名 -->
     <!-- wx:for-item 起别名 -->
-    <swiper-item class="swiper-item" wx:for="{{bannerLists}}" wx:for-item="item1"  wx:key="id">
-      <image  class="swiper-item-img"  src="{{item1.url}}"></image>
+    <swiper-item class="swiper-item" wx:for="{{bannerLists}}" wx:for-item="item1"  wx:key="bannerId">
+      <image  class="swiper-item-img"  src="{{item1.pic}}"></image>
     </swiper-item>
  </swiper>
  <!-- navlist -->
@@ -41,25 +41,9 @@
     <!-- 滑动 -->
     <view>
       <scroll-view  scroll-x enable-flex class="scroll-layout">
-        <view class="scroll-layout-item">
-          <image class="scroll-layout-item-img" src="../../static/images/mylove.jpg"></image>
-          <text  class="scroll-layout-item-name">名字名字名字名字名字名字名字名字名字</text>
-        </view>
-        <view class="scroll-layout-item">
-          <image class="scroll-layout-item-img" src="../../static/images/mylove.jpg"></image>
-          <text  class="scroll-layout-item-name">名字</text>
-        </view>
-        <view class="scroll-layout-item">
-          <image class="scroll-layout-item-img" src="../../static/images/mylove.jpg"></image>
-          <text  class="scroll-layout-item-name">名字</text>
-        </view>
-        <view class="scroll-layout-item">
-          <image class="scroll-layout-item-img" src="../../static/images/mylove.jpg"></image>
-          <text  class="scroll-layout-item-name">名字</text>
-        </view>
-        <view class="scroll-layout-item">
-          <image class="scroll-layout-item-img" src="../../static/images/mylove.jpg"></image>
-          <text  class="scroll-layout-item-name">名字</text>
+        <view class="scroll-layout-item" wx:for="{{personalized}}" wx:key="id">
+          <image class="scroll-layout-item-img" src="{{item.picUrl}}"></image>
+          <text  class="scroll-layout-item-name">{{item.name}}</text>
         </view>
       </scroll-view>
     </view>
@@ -73,69 +57,20 @@
       previous-margin='20rpx'
       next-margin="40rpx"
     >
-      <swiper-item class="rankList_swiper_item">
+      <swiper-item class="rankList_swiper_item" wx:for="{{playlists}}" wx:key="index">
         <view class="rankList_swiper_layout">
-          <text class="rankList_swiper_layout_name">名字</text>
+          <text class="rankList_swiper_layout_name">{{item.name}}</text>
           <!-- 排行榜的 某一条歌曲 -->
-          <view class="rankList_swiper_layout_list">
-            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
-            <text class="rankList_swiper_layout_index">1</text>
-            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
+          <view class="rankList_swiper_layout_list"
+            wx:for="{{item.playlist}}"
+            wx:for-item="item2"
+            wx:for-index="index2" wx:key="index2"
+            >
+            <image class="rankList_swiper_layout_list_img" src="{{item2.al.picUrl}}"></image>
+            <text class="rankList_swiper_layout_index">{{index2 + 1}}</text>
+            <text class="rankList_swiper_layout_list_name">{{item2.al.name}}</text>
           </view>
-          <view class="rankList_swiper_layout_list">
-            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
-            <text class="rankList_swiper_layout_index">1</text>
-            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
-          </view>
-          <view class="rankList_swiper_layout_list">
-            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
-            <text class="rankList_swiper_layout_index">1</text>
-            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
-          </view>
-        </view>
-      </swiper-item>
-
-      <swiper-item class="rankList_swiper_item">
-        <view class="rankList_swiper_layout">
-          <text class="rankList_swiper_layout_name">名字</text>
-          <!-- 排行榜的 某一条歌曲 -->
-          <view class="rankList_swiper_layout_list">
-            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
-            <text class="rankList_swiper_layout_index">1</text>
-            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
-          </view>
-          <view class="rankList_swiper_layout_list">
-            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
-            <text class="rankList_swiper_layout_index">1</text>
-            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
-          </view>
-          <view class="rankList_swiper_layout_list">
-            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
-            <text class="rankList_swiper_layout_index">1</text>
-            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
-          </view>
-        </view>
-      </swiper-item>
-
-      <swiper-item class="rankList_swiper_item">
-        <view class="rankList_swiper_layout">
-          <text class="rankList_swiper_layout_name">名字</text>
-          <!-- 排行榜的 某一条歌曲 -->
-          <view class="rankList_swiper_layout_list">
-            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
-            <text class="rankList_swiper_layout_index">1</text>
-            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
-          </view>
-          <view class="rankList_swiper_layout_list">
-            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
-            <text class="rankList_swiper_layout_index">1</text>
-            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
-          </view>
-          <view class="rankList_swiper_layout_list">
-            <image class="rankList_swiper_layout_list_img" src="../../static/images/mylove.jpg"></image>
-            <text class="rankList_swiper_layout_index">1</text>
-            <text class="rankList_swiper_layout_list_name">歌曲名字</text>
-          </view>
+         
         </view>
       </swiper-item>
     </swiper>
