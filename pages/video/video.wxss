@@ -30,10 +30,11 @@
 }
 
 .navScroll_item{
-  margin: 0 50rpx;
+  margin: 0 20rpx;
   height: 50rpx;
+  white-space: nowrap;
 }
-.acitve{
+.active{
   border-bottom: 1rpx solid red;
   box-sizing: border-box;
 }

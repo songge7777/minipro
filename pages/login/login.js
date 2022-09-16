@@ -50,7 +50,9 @@ Page({
     // 登录接口 15997477937
     const r = await requset('/login/cellphone',{
       phone,
-      password
+      password,
+      // 登录的时候 做区别
+      isLogin: true,
     },'GET')
     console.log('登录接口 返回数据', r)
     if(r.code === 200){

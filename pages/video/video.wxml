@@ -6,38 +6,26 @@
     <image class="header_layout_right" src="../../static/images/logo.png"></image>
   </view>
   <!-- nav list -->
-  <scroll-view enable-flex scroll-x class="navScroll"> 
-    <view class="navScroll_item acitve">
-      nav
-    </view>
-    <view class="navScroll_item">
-      nav
-    </view>
-    <view class="navScroll_item">
-      nav
-    </view>
-    <view class="navScroll_item">
-      nav
+  <scroll-view
+    enable-flex scroll-x class="navScroll"
+    scroll-into-view="{{'s'+currentIndex}}"
+    scroll-with-animation
+  > 
+    <view
+      class="navScroll_item {{item.id === currentIndex ? 'active' : ''}}"
+      wx:for="{{navLists}}"
+      wx:key="index"
+      id="{{'s'+item.id}}"
+      data-id="{{item.id}}"
+      bindtap="handleFn"
+      >
+      {{item.name}}
     </view>
   </scroll-view>
   <!-- 视频列表 -->
   <scroll-view class="video_layout_scroll" scroll-y>
-    <view class="video_layout">
-      <video class="video_layout_item"></video>
-    </view>
-    <view class="video_layout">
-      <video class="video_layout_item"></video>
-    </view>
-    <view class="video_layout">
-      <video class="video_layout_item"></video>
-    </view>
-
-    <view class="video_layout">
-      <video class="video_layout_item"></video>
-    </view>
-
-    <view class="video_layout">
-      <video class="video_layout_item"></video>
+    <view class="video_layout" wx:for="{{videoList}}" wx:key="index">
+      <video src="{{item.url}}" class="video_layout_item"></video>
     </view>
   </scroll-view>
 </view>

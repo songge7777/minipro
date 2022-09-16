@@ -4,8 +4,18 @@ export default function requeset(url,data,method='Get'){
     wx.request({
       url:"http://localhost:3000" +url, 
       data,
+      header:{
+        cookie: wx.getStorageSync('cookie') && wx.getStorageSync('cookie').join(';')
+      },
       method,
       success:(res)=>{
+        // 在登录的时候 获取cookie
+        // 怎么区别是登录时候 data.isLogin
+        // console.log('传递的参数 data->',data)
+        // console.log('接口返回的 data->',res)
+        if(data.isLogin){
+          wx.setStorageSync('cookie', res.cookies)
+        }
         resolve(res.data)
       },
       fial:(err)=>{
