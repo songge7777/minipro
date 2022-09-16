@@ -2,7 +2,7 @@
 export default function requeset(url,data,method='Get'){
   return new Promise((resolve,reject)=>{
     wx.request({
-      url:"http://localhost:3000" +url,
+      url:"http://localhost:3000" +url, 
       data,
       method,
       success:(res)=>{

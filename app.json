@@ -1,10 +1,36 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/video/video",
+    "pages/center/center",
+    "pages/login/login"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ea2a1d",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "谷粒云音乐"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./static/images/tabs/tab-home.png",
+        "selectedIconPath": "./static/images/tabs/tab-home-current.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "视频",
+        "iconPath": "./static/images/tabs/select.png",
+        "selectedIconPath": "./static/images/tabs/selected.png"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "text": "中心",
+        "iconPath": "./static/images/tabs/tab-my.png",
+        "selectedIconPath": "./static/images/tabs/tab-my-current.png"
+      }
+    ]
   }
 }
