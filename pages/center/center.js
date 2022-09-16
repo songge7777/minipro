@@ -1,4 +1,4 @@
-// pages/center/center.js
+import request from '../../utils/request'
 // startY 记录滑动Y距离
 let startY = 0;
 Page({
@@ -10,6 +10,8 @@ Page({
     moveY:0,
     transition:'',
     userInfo:{},
+    // 保存最近播放的数据
+    songUrls:[],
   },
   // 点击事件回调
   handleFn(event){
@@ -53,12 +55,20 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
+  async onLoad(options) {
     const userInfo = wx.getStorageSync('userInfo')
     this.setData({
       userInfo
     })
-    console.log('获取获取信息', userInfo)
+    // 如果有 名字 代表已经登录了
+    if(userInfo.nickname){
+      const res = await request('/user/record',{uid: userInfo.userId,type:1})
+      this.setData({
+        songUrls:res.weekData.map(item => item.song.al)
+      })
+      console.log('最近播放的数据', res.weekData);
+    }
+    // console.log('获取获取信息', userInfo)
   },
 
   /**

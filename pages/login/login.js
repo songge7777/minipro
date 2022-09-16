@@ -49,15 +49,24 @@ Page({
     }
     // 登录接口 15997477937
     const r = await requset('/login/cellphone',{
-      phone:'15997477937',
-      password:'songge0322'
+      phone,
+      password
     },'GET')
-    // 本地保存的数据
-    wx.setStorageSync('userInfo', r.profile)
-    wx.reLaunch({
-      url: '/pages/center/center',
-    })
-    console.log('登录接口 返回的数据', r)
+    console.log('登录接口 返回数据', r)
+    if(r.code === 200){
+      // 本地保存的数据
+      wx.setStorageSync('userInfo', r.profile)
+      wx.reLaunch({
+        url: '/pages/center/center',
+      })
+      console.log('登录接口 返回的数据', r)
+    } else {
+      wx.showToast({
+        title: r.message,
+        icon:'error'
+      })
+      console.log('登录接口 错误的返回数据', r)
+    }
   },
   /**
    * 生命周期函数--监听页面加载

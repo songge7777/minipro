@@ -1,1 +1,48 @@
 /* pages/video/video.wxss */
+.layout{
+  padding: 0 10rpx;
+}
+/* 头部布局 */
+.header_layout{
+  display: flex;
+  margin-top: 10rpx;
+}
+.header_layout_text{
+  flex: 1;
+  border: 1px solid #aaa;
+  text-align: center;
+  margin: 0 10rpx;
+  color: #ff0000;
+}
+.header_layout_left{
+  width: 60rpx;
+  height: 60rpx;
+}
+.header_layout_right{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+/* nav布局 */
+.navScroll{
+  display: flex;
+  height: 50rpx;
+}
+
+.navScroll_item{
+  margin: 0 50rpx;
+  height: 50rpx;
+}
+.acitve{
+  border-bottom: 1rpx solid red;
+  box-sizing: border-box;
+}
+.video_layout_scroll{
+  height: calc(100vh - 100rpx);
+  margin-top: 10rpx;
+}
+.video_layout_item{
+  width: 100%;
+  height: 360rpx;
+  border-radius: 20rpx;
+}
