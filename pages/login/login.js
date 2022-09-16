@@ -1,3 +1,4 @@
+import requset from '../../utils/request';
 // pages/login/login.js
 Page({
 
@@ -20,10 +21,10 @@ Page({
     })
   },
    // 登录逻辑
-   loginFn(){
+  async loginFn(){
     const password = this.data.password
     const phone = this.data.phone
-    console.log('登录获取的数据 手机号', phone)
+    console.log('登录获取的数据 手机号', phone, this.data)
     console.log('登录获取的数据 密码', password)
     // 校验 
     // phone :  1开头 全是数字  11位  第二位开始[3-9]
@@ -32,12 +33,13 @@ Page({
       // 提示语 
       wx.showToast({
         title: '手机号格式有误',
-        icon: "error"
+        icon: "error",
+        duration: 5000
       })
       return;
     }
     // 密码校验 
-    if(!/\w{6}$/.test(password)){
+    if(!/\w{6,20}$/.test(password)){
       // 提示语
       wx.showToast({
         title: '密码格式有误',
@@ -45,6 +47,17 @@ Page({
       })
       return;
     }
+    // 登录接口 15997477937
+    const r = await requset('/login/cellphone',{
+      phone:'15997477937',
+      password:'songge0322'
+    },'GET')
+    // 本地保存的数据
+    wx.setStorageSync('userInfo', r.profile)
+    wx.reLaunch({
+      url: '/pages/center/center',
+    })
+    console.log('登录接口 返回的数据', r)
   },
   /**
    * 生命周期函数--监听页面加载

@@ -9,6 +9,7 @@ Page({
   data: {
     moveY:0,
     transition:'',
+    userInfo:{},
   },
   // 点击事件回调
   handleFn(event){
@@ -53,7 +54,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    const userInfo = wx.getStorageSync('userInfo')
+    this.setData({
+      userInfo
+    })
+    console.log('获取获取信息', userInfo)
   },
 
   /**
