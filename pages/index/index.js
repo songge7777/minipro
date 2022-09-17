@@ -23,7 +23,12 @@ Page({
     personalized:[],
     playlists:[],
   },
-
+  // 跳转每日推荐的 回调函数
+  toRecommend(){
+    wx.navigateTo({
+      url: '/pages/recommend/recommend',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

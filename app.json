@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/video/video",
     "pages/center/center",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/recommend/recommend"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ea2a1d",

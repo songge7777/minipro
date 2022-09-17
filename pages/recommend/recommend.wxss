@@ -1,0 +1,74 @@
+/* pages/recommend/recommend.wxss */
+.layout{
+  display: flex;
+  flex-direction: column;
+}
+/* 顶部 布局 */
+.layout_header{
+  width: 100%;
+  height: 300rpx;
+  position: relative;
+}
+.layout_header_img{
+  width: 100%;
+  height: 100%;
+}
+.layout_header_text{
+  width: 100rpx;
+  height: 50rpx;
+  color: white;
+  /* 辅助线 */
+  /* border: 1px solid red;
+  box-sizing: border-box; */
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 40rpx;
+}
+
+/* 中间全选字段布局  */
+.layout_main{
+  /* background: red; */
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 20rpx;
+  margin-top: -20rpx;
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  padding: 0 20rpx;
+}
+.layout_main_right{
+  float:right
+}
+/* 滑动布局 */
+.layout_scroll{
+  height: calc(100vh - 360rpx);
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.layout_scroll_list{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.layout_scroll_list_img{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+.layout_scroll_list_song{
+  flex:1
+}
+.layout_scroll_list_song{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+.iconfont{
+}

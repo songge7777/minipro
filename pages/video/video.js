@@ -200,7 +200,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-
+    wx.hideShareMenu({
+      menus:['shareAppMessage']
+    })
   },
 
   /**
@@ -223,6 +225,9 @@ Page({
    */
   onShareAppMessage({from}) {
     // from 的值 menu button用来区别原生和自定按钮
+    // 图片的问题
+    // 1、组合一堆数据的图片  画布 有兼容
+    // 2、后端生成图片
       console.log('用户点击右上角分享',from)
       return {
         imageUrl:'../../static/images/mylove.jpg',

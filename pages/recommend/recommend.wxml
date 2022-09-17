@@ -1,0 +1,28 @@
+
+<view class="layout">
+    <!-- 顶部的日期 -->
+    <view class="layout_header">
+      <image class="layout_header_img" src="../../static/images/recommendSong/recommendSong.jpg"></image>
+      <text  class="layout_header_text" >{{day}}/{{month}}</text>
+    </view>
+    <!-- 全选 字段 -->
+    <view class="layout_main">
+      <text class="layout_main_left">播放全部</text>
+      <text class="layout_main_right">全选</text>
+    </view>
+    <!-- 歌曲列表滑动 -->
+    <scroll-view
+      class="layout_scroll"
+      enable-flex
+      scroll-y
+    >
+      <view class="layout_scroll_list" wx:for="{{songLists}}" wx:key="index">
+        <image class="layout_scroll_list_img" src="{{item.album.picUrl}}"></image>
+        <view class="layout_scroll_list_song">
+          <text class="layout_scroll_list_song_name">{{item.name}}</text>
+          <text class="layout_scroll_list_song_singer">{{item.artists[0].name}}</text>
+        </view>
+        <text class="iconfont icon-gengduo"></text>
+      </view>
+    </scroll-view>
+</view>
