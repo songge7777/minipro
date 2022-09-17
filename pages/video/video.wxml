@@ -25,13 +25,14 @@
   <!-- 视频列表 -->
   <scroll-view class="video_layout_scroll" scroll-y>
     <view class="video_layout" wx:for="{{videoList}}" wx:key="index">
+      <!-- bindtimeupdate 获取当前播放的时间节点 -->
       <video
         wx:if="{{item.vid === currentId}}"
         src="{{item.urlInfo.url}}"
         class="video_layout_item"
         id="{{item.vid}}"
-        bindtap="clickVideo"
         poster="{{item.coverUrl}}"
+        bindtimeupdate="getVideoTime"
       ></video>
       <image
         wx:else

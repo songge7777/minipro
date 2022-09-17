@@ -10,8 +10,47 @@ Page({
     currentIndex:'',
     videoList:[],
     currentId:'',
+    videoPlayHistoryData:[],//[{id,currentTime}]
   },
-
+  // seekHistoryVideo 跳转到指定的视频 上次播放的位子
+  seekHistoryVideo(id){
+    // 1、获取当前点击的id
+    // 2、获取历史数据 是否 有对应的id数据
+    const obj = this.data.videoPlayHistoryData.find(item => item.id === id)
+    if(obj){
+      this.player.seek(obj.currentTime)
+    }
+    // 3、有 接着上一次位子播放 videoContext.seek(时间)
+  },
+  // 时间节点的回调函数
+  getVideoTime(event){
+    // 1、获取 当前播放的时间节点 event.detail.currentTime
+    const currentTime = event.detail.currentTime
+    // 2、获取 video id
+    const id = event.target.id;
+    // 3、整理好的单个对象 {id,currentTime}  每间隔250ms
+    let  currentTimeObj = {
+      id,
+      currentTime,
+    }
+    // 4、通过id  去找到历史数据 是否有 
+    const videoPlayHistoryData = this.data.videoPlayHistoryData
+    const obj = videoPlayHistoryData.find(item => item.id === id)
+    console.log('去找到历史数据 是否有',obj)
+    //  有就直接修改 没有就给他新增
+    if(obj){
+      obj.currentTime = currentTime
+    } else {
+      videoPlayHistoryData.push(currentTimeObj)
+    }
+    // 5、把更新一下历史数据结构
+    this.setData({
+      videoPlayHistoryData
+    })
+    // console.log('================')
+    // console.log('时间节点的回调函数', event)
+    // console.log('================')
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -46,6 +85,8 @@ Page({
         // 创建新的 视频实例this.player赋值  在进行播放
         // 覆盖上一次的 视频实例
         this.player = wx.createVideoContext(id);
+        // 跳转到 历史记录页面
+        this.seekHistoryVideo(id);
         this.player.play();
         // 保存当前播放的id
         this.setData({
