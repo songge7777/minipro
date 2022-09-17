@@ -25,7 +25,22 @@
   <!-- 视频列表 -->
   <scroll-view class="video_layout_scroll" scroll-y>
     <view class="video_layout" wx:for="{{videoList}}" wx:key="index">
-      <video src="{{item.url}}" class="video_layout_item"></video>
+      <video
+        wx:if="{{item.vid === currentId}}"
+        src="{{item.urlInfo.url}}"
+        class="video_layout_item"
+        id="{{item.vid}}"
+        bindtap="clickVideo"
+        poster="{{item.coverUrl}}"
+      ></video>
+      <image
+        wx:else
+        src="{{item.coverUrl}}"
+        id="{{item.vid}}"
+        class="video_layout_item_img"
+        bindtap="clickVideo"
+      >
+      </image>
     </view>
   </scroll-view>
 </view>
