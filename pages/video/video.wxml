@@ -23,7 +23,14 @@
     </view>
   </scroll-view>
   <!-- 视频列表 -->
-  <scroll-view class="video_layout_scroll" scroll-y>
+  <scroll-view
+    class="video_layout_scroll"
+    scroll-y
+    refresher-enabled
+    bindrefresherrefresh="onRefresherrefresh"
+    refresher-triggered="{{refresher}}"
+    bindscrolltolower="onScrolltolower"
+  >
     <view class="video_layout" wx:for="{{videoList}}" wx:key="index">
       <!-- bindtimeupdate 获取当前播放的时间节点 -->
       <video
@@ -33,6 +40,7 @@
         id="{{item.vid}}"
         poster="{{item.coverUrl}}"
         bindtimeupdate="getVideoTime"
+        bindended="getEnded"
       ></video>
       <image
         wx:else
@@ -42,6 +50,25 @@
         bindtap="clickVideo"
       >
       </image>
+      <view class="content">{{item.title}}</view>
+      <view class="footer">
+        <image class="avatar" src="{{item.creator.avatarUrl}}"></image>
+        <text class="nickName">{{item.creator.nickname}}</text>
+        <view class="comments_praised">
+          <text class="item">
+            <text class="iconfont icon-buoumaotubiao15"></text>
+            <text class="count">{{item.praisedCount}}</text>
+          </text>
+          <text class="item">
+            <text class="iconfont icon-pinglun1"></text>
+            <text class="count">{{item.commentCount}}</text>
+          </text>
+          <!-- open-type="share" 在button 里面添加 就能达到分享功能 -->
+          <button  open-type="share" class="item btn">
+            <text class="iconfont icon-gengduo"></text>
+          </button>
+        </view>
+      </view>
     </view>
   </scroll-view>
 </view>
